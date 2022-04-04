@@ -11,7 +11,6 @@ public class Login {
     @Produces("text/plain")
     public String login(@FormParam("usr") String usr, @FormParam("pwd") String pwd) {
         StringBuilder msg= new StringBuilder("Trying to connect...");
-        //msg.append("using:"); msg.append(usr); msg.append(" and "); msg.append(pwd);
         try {
             String url = "jdbc:postgresql://localhost:5432/postgres";
             Properties props = new Properties();

@@ -1,5 +1,5 @@
 ###
-POST http://localhost:9999/webapp_war_exploded/api/hello-world
+POST http://localhost:9999/webapp_war_exploded/api/login
 
 <> 2022-03-25T114112.404.html
 

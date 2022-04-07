@@ -12,13 +12,7 @@ public class Login {
     public String login(@FormParam("usr") String usr, @FormParam("pwd") String pwd) {
         StringBuilder msg= new StringBuilder("Trying to connect...");
         try {
-            String url = "jdbc:postgresql://localhost:5432/postgres";
-            Properties props = new Properties();
-            props.setProperty("user","postgres");
-            props.setProperty("password","admin");
-            //props.setProperty("ssl","false");
-            Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection(url, props);
+            Connection conn = LoginApplication.getConnection();
             PreparedStatement st = conn.prepareStatement("SELECT * FROM users WHERE name = ? and password = ?");
             st.setString(1,usr);
             st.setString(2,pwd);
